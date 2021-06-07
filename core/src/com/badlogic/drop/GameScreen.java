@@ -29,7 +29,7 @@ public class GameScreen implements Screen {
 	Array<Rectangle> raindrops;
 	long lastDropTime;
 	int dropsGathered;
-	int lives = 5;
+	int lives = 1;
 
 	public GameScreen(final Drop game) {
 		this.game = game;
@@ -92,7 +92,6 @@ public class GameScreen implements Screen {
 		game.batch.begin();
 		game.batch.draw(Background,0,0);
 		game.font.draw(game.batch, "Drops Collected: " + dropsGathered, 0, 480);
-		game.font.draw(game.batch, "Lives: " + lives, 720, 480);
 		game.batch.draw(bucketImage, bucket.x, bucket.y, bucket.width, bucket.height);
 		for (Rectangle raindrop : raindrops) {
 			game.batch.draw(dropImage, raindrop.x, raindrop.y);
